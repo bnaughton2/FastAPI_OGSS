@@ -18,3 +18,16 @@ class StoreSalesSchema(BaseModel):
         orm_mode = True
 #Pydantic's orm_mode will tell the Pydantic model to read the data #even if it is not a dict, 
 #but an ORM model (or any other arbitrary #object with attributes).
+
+class PayrollSchema(BaseModel):
+    id: str
+    startDate: date
+    endDate: date
+    amount: float  
+    updatedOn: datetime
+    updatedBy: str
+    addedOn: datetime
+    addedBy: str
+
+    class Config:
+        orm_mode = True
